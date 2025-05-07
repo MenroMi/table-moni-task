@@ -1,7 +1,7 @@
 import { TokenType } from '@/types/token';
 import { FC } from 'react';
-import { Socials } from '../Socials';
 import { Avatar } from './Avatar';
+import { Socials } from './Socials';
 
 type Props = {
   inputData: TokenType;
@@ -30,7 +30,7 @@ export const TokenInfo: FC<Props> = ({ inputData }) => {
           <span className="inline-block leading-3 text-xs text-santas-gray">
             {slicedAddress}
           </span>
-          <Socials />
+          <Socials links={inputData.links} />
         </div>
       </div>
     </div>

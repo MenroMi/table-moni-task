@@ -1,27 +1,27 @@
-type VolumeType = {
+export type VolumeType = {
   USD: number;
 };
 
-type SecureType = {
+export type SecureType = {
   shortName: string;
   name: string;
   status: boolean;
 };
 
-type LinkType = {
+export type LinkType = {
   name: string;
   linkUrl: string;
   logoUrl: string;
 };
 
-type ChainType = {
+export type ChainType = {
   id: number;
   name: string;
   slug: string;
   logoUrl: string;
 };
 
-type PlatformType = {
+export type PlatformType = {
   id: number;
   name: string;
   slug: string;
