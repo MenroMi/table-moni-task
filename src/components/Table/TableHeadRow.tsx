@@ -1,6 +1,7 @@
 import { TableColumnType } from '@/types/table';
 import clsx from 'clsx';
 import { FC } from 'react';
+import { TableColumnSort } from './TableColumnSort';
 import { TableHeadCell } from './TableHeadCell';
 
 type Props = {
@@ -29,7 +30,10 @@ export const TableHeadRow: FC<Props> = ({ columns, className }) => (
           key={column.id}
           className={clsx(column.className, pinnedFirstCol, pinnedLastCol)}
         >
-          {column.label}
+          <div className={clsx('flex gap-1', column.classNameContent)}>
+            {column.sort && <TableColumnSort />}
+            {column.label}
+          </div>
         </TableHeadCell>
       );
     })}

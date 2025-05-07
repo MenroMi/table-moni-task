@@ -1,6 +1,8 @@
 export type TableColumnType = {
   id: string;
   label: string;
+  sort: boolean;
+  classNameContent?: string;
   className?: string;
 };
 
