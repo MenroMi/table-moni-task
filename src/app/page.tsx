@@ -1,17 +1,15 @@
 'use client';
 
 import Table from '@/components/Table';
-import { useTokensStore } from '@/context/TokensContext';
+import { tokensStore } from '@/stores/TokensStore';
 import { observer } from 'mobx-react-lite';
 import { UIEvent, useEffect } from 'react';
 import { uiStore } from '../stores/UiStore';
 
 const Home = observer(() => {
-  const tokensStore = useTokensStore();
-
   useEffect(() => {
     tokensStore.fetchTokens();
-  }, [tokensStore]);
+  }, []);
 
   const handleScroll = (e: UIEvent) => {
     const target = e.currentTarget as HTMLDivElement;

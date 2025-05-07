@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
-import { TokensProvider } from '@/context/TokensProvider';
 import clsx from 'clsx';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -25,7 +24,7 @@ export default function RootLayout({
           'py-6 px-4'
         )}
       >
-        <TokensProvider>{children}</TokensProvider>
+        {children}
       </body>
     </html>
   );

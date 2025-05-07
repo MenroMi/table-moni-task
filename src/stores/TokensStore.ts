@@ -31,3 +31,5 @@ export class TokensStore {
     }
   }
 }
+
+export const tokensStore = new TokensStore();
