@@ -17,7 +17,7 @@ export const TokenInfo: FC<Props> = ({ inputData }) => {
   return (
     <div className="flex items-end gap-2.5">
       <Avatar
-        logoUrl={inputData.logoUrl}
+        logoUrl={inputData.logoUrl ?? inputData.chain.logoUrl}
         name={inputData.name}
         className="self-center"
       />
