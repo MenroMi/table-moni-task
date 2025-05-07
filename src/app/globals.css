@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #fafafa;
+  --woodsmoke: #111112;
+  --shark: #27272a;
+  --dark-shark: #1c1c1e;
+  --santas-gray: #a1a1aa;
+  --positive-green: #83e073;
+  --destructive-red: #ff5f5f;
+  --cod-gray: #121212;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-woodsmoke: var(--woodsmoke);
+  --color-shark: var(--shark);
+  --color-santas-gray: var(--santas-gray);
+  --color-dark-shark: var(--dark-shark);
+  --color-positive-green: var(--positive-green);
+  --color-destructive-red: var(--destructive-red);
+  --color-cod-gray: var(--cod-gray);
+}
+
+@layer base {
+  html {
+    @apply text-sm text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .after-divider {
+    @apply relative w-20 text-right pr-2;
+  }
+
+  .after-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 1.25rem;
+    width: 1px;
+    background-color: theme('colors.shark');
+  }
+
+  .border-b-sticky {
+    box-shadow: inset 0 -1px 0 0 var(--shark);
+  }
+
+  .shadow-sticky {
+    box-shadow: 10px 25px 30px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .sticky-l {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+  }
+
+  .sticky-r {
+    position: sticky;
+    right: 0;
+    z-index: 10;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
