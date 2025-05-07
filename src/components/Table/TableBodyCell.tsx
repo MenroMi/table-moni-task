@@ -77,7 +77,3 @@ export const TableBodyCell: FC<Props> = ({
     </td>
   );
 };
-
-// Привет, закончил. Если есть какие-нибудь вопросы: либо что-то упустил, то буду рад любому фидбэку:
-// 1. https://table-moni-task.vercel.app/
-// 2. https://github.com/MenroMi/table-moni-task
