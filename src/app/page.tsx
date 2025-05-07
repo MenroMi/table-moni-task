@@ -26,7 +26,7 @@ const Home = observer(() => {
   return (
     <div
       onScroll={handleScroll}
-      className="overflow-x-auto max-h-[calc(100vh-50px)] h-screen border border-shark rounded-sm"
+      className="overflow-x-auto max-h-[calc(100vh-50px)] h-screen border border-shark rounded-sm max-w-[1920px] mx-auto"
     >
       {!tokensStore.tokens.length || tokensStore.loading ? (
         <div className="flex justify-center items-center h-[inherit]">
