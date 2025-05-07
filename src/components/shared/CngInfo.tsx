@@ -1,6 +1,5 @@
 import { formatNumber } from '@/utils/formatNumber';
 import { isNumber } from '@/utils/validation';
-import clsx from 'clsx';
 import { FC } from 'react';
 
 type Props = {
@@ -21,6 +20,7 @@ export const CngInfo: FC<Props> = ({ value }) => {
   }
 
   const [operator, className] = validateZero(value);
-  const val = formatNumber(value);
-  return <span className={clsx(className)}>{`${operator}${val}`}</span>;
+  return (
+    <span className={className}>{`${operator}${formatNumber(value)}`}</span>
+  );
 };
