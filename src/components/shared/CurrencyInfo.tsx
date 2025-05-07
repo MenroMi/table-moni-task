@@ -1,4 +1,4 @@
-import { formatCurrency } from '@/utils/formatCurrency';
+import { formatNumber } from '@/utils/formatNumber';
 import { isNumber } from '@/utils/validation';
 import { FC } from 'react';
 import { TransactionRationBar } from './TransactionRationBar';
@@ -17,7 +17,7 @@ type Props = {
 export const CurrencyInfo: FC<Props> = ({ value, correlation, withBar }) => {
   return isNumber(value) ? (
     <>
-      <span>{formatCurrency(value)}</span>
+      <span>${formatNumber(value)}</span>
       {withBar ? (
         <TransactionRationBar
           className="absolute bottom-3 right-2"
