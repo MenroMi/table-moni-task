@@ -44,8 +44,8 @@ const getInfoComponent = (
           withBar
           value={value}
           correlation={{
-            buy: Number(cell.volumeBuy['USD']),
-            sell: Number(cell.volumeSell['USD']),
+            buy: Number(cell.volumeBuy.USD ?? 0),
+            sell: Number(cell.volumeSell.USD ?? 0),
           }}
         />
       );
@@ -54,7 +54,7 @@ const getInfoComponent = (
     case 'currency':
       return <CurrencyInfo value={value} />;
     case 'entry-exit':
-      return <TradeEntryExit />;
+      return <TradeEntryExit security={cell.security} />;
     case 'buy-btn':
       return <BuyButton />;
   }
@@ -77,3 +77,7 @@ export const TableBodyCell: FC<Props> = ({
     </td>
   );
 };
+
+// Привет, закончил. Если есть какие-нибудь вопросы: либо что-то упустил, то буду рад любому фидбэку:
+// 1. https://table-moni-task.vercel.app/
+// 2. https://github.com/MenroMi/table-moni-task
