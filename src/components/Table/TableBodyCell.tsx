@@ -1,6 +1,6 @@
 import { ComponentType, ValueType } from '@/types/table';
 import { TokenType } from '@/types/token';
-import { FC, JSX } from 'react';
+import { FC, JSX, Ref } from 'react';
 import { BuyButton } from '../shared/BuyButton';
 import { CngInfo } from '../shared/CngInfo';
 import { CommonInfo } from '../shared/CommonInfo';
@@ -14,7 +14,7 @@ type Props = {
   value?: ValueType;
   type: ComponentType;
   className?: string;
-  ref?: any;
+  ref?: Ref<HTMLTableCellElement>;
 };
 
 const getInfoComponent = (

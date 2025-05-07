@@ -4,16 +4,12 @@ import { makeAutoObservable, runInAction } from 'mobx';
 
 export class TokensStore {
   loading: boolean = false;
-  error: any = null;
+  error: string | null = null;
 
   tokens: TokenType[] = [];
 
   constructor() {
     makeAutoObservable(this);
-  }
-
-  insertTokens(tokens: any[]) {
-    this.tokens = tokens;
   }
 
   async fetchTokens() {
@@ -27,9 +23,9 @@ export class TokensStore {
         this.loading = false;
         this.error = null;
       });
-    } catch (e: any) {
+    } catch (e: unknown) {
       runInAction(() => {
-        this.error = e.message;
+        this.error = (e as Error).message;
         this.loading = false;
       });
     }
